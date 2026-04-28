@@ -197,3 +197,19 @@ if __name__ == "__main__":
         print("Keyword analysis and velocity signals are sufficient for the paper.")
 
     print("\nDone.")
+# save topic model
+    import pickle
+    nlp_artifacts = {
+        "keywords_truist": kw,
+        "keywords_bofa": kw_peers,
+        "velocity_signals": vol,
+    }
+    try:
+        topic_model.save(f"{MODEL_DIR}/bertopic_truist")
+        print(f"BERTopic model saved to {MODEL_DIR}/bertopic_truist")
+    except Exception as e:
+        print(f"BERTopic save skipped: {e}")
+
+    with open(f"{MODEL_DIR}/nlp_artifacts.pkl", "wb") as f:
+        pickle.dump(nlp_artifacts, f)
+    print(f"NLP artifacts saved to {MODEL_DIR}/nlp_artifacts.pkl")
