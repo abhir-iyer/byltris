@@ -345,8 +345,16 @@ export default function Home() {
             <span>Byltris</span>
           </Link>
           <div className="text-ghost text-xs font-mono text-center">
-            Data: FDIC SDI, CFPB, FFIEC HMDA, FRED. For informational purposes only.
-          </div>
+  Data: FDIC SDI, CFPB, FFIEC HMDA, FRED. For informational purposes only.
+</div>
+<div className="text-ghost text-xs font-mono text-center">
+  Built by{' '}
+  <a href="https://linkedin.com/in/abhir-iyer" target="_blank" rel="noopener noreferrer"
+    className="text-signal hover:underline transition-colors">
+    Abhir Iyer
+  </a>
+  {' '}· MS Data Science, Indiana University Bloomington
+</div>
           <a href="https://github.com/abhir-iyer/byltris" target="_blank" rel="noopener noreferrer"
             className="text-ghost hover:text-signal text-xs font-mono transition-colors">
             GitHub ↗
