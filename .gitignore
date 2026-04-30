@@ -2,7 +2,7 @@
 node_modules/
 .next/
 
-# Env files (IMPORTANT)
+# Env files
 .env
 .env.local
 .env.development
@@ -11,6 +11,10 @@ node_modules/
 # Python
 .venv/
 __pycache__/
+
+# Data / notebooks
+data/
+notebooks/.ipynb_checkpoints/
 
 # OS junk
 .DS_Store
