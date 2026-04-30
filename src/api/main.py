@@ -3,7 +3,33 @@ Byltris API — FastAPI backend
 Serves pre-computed model outputs + live CERT lookup
 Deploy on Railway
 """
+import os
+from huggingface_hub import hf_hub_download
 
+def ensure_data():
+    token = os.environ.get("HF_TOKEN", "")
+    repo  = "abhiriyer/byltris-data"
+    files = [
+        "data/processed/watchlist.parquet",
+        "data/processed/fair_lending_inference.parquet",
+        "data/processed/did_panel.parquet",
+        "data/processed/fdic_institution_names.parquet",
+        "data/raw/fdic_financials.parquet",
+    ]
+    for f in files:
+        if not os.path.exists(f):
+            os.makedirs(os.path.dirname(f), exist_ok=True)
+            print(f"Downloading {f}...")
+            hf_hub_download(
+                repo_id=repo,
+                filename=f,
+                repo_type="dataset",
+                token=token,
+                local_dir=".",
+            )
+            print(f"Ready: {f}")
+
+ensure_data()
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
