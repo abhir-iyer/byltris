@@ -7,7 +7,7 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-displa
 const dmMono = DM_Mono({ subsets: ['latin'], weight: ['400','500'], variable: '--font-mono', display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'Byltris — Bank Health Intelligence',
+  title: 'Byltris | Bank Health Intelligence',
   description: 'Early warning models, fair lending analysis, and consumer complaint intelligence for U.S. bank supervision.',
   metadataBase: new URL('https://byltris.fyi'),
   icons: {
