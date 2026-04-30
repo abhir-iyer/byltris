@@ -1,0 +1,7 @@
+{
+  "/watchlist/page": "app/watchlist/page.js",
+  "/bank/page": "app/bank/page.js",
+  "/fairlending/page": "app/fairlending/page.js",
+  "/page": "app/page.js",
+  "/complaints/page": "app/complaints/page.js"
+}
